@@ -12,22 +12,21 @@ empty = []
 id = 0
 for i, c in enumerate(input):
     if i % 2 == 0:
-        for j in range(int(c)):
-            files.append(str(id))
+        files.append([str(id), int(c)])
         id += 1
     else:
-        for j in range(int(c)):
-            empty.append(len(files))
-            files.append(None)
+        empty.append([len(files), int(c)])
+        files.append([None, int(c)])
 
-for empty_space in empty:
-    if empty_space > len(files):
-        break
-    files[empty_space] = files.pop()
-    while files[-1] == None:
-        files.pop()
+print(files)
+print(empty)
 
-total = 0
-for i, f in enumerate(files):
-    total += i * int(f)
-print(total)
+# while empty and files:
+#     last = files.pop()
+#     for e in empty:
+#         if e[1] >= 
+
+# total = 0
+# for i, f in enumerate(files):
+#     total += i * int(f)
+# print(total)
