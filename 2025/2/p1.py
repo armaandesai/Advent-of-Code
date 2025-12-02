@@ -5,3 +5,13 @@ input_file_path = os.path.join(current_dir, "input.txt")
 
 with open(input_file_path, "r") as file:
     lines = file.readlines()
+
+res = 0    
+ids = lines[0].split(",")
+for id in ids:
+    x, y = id.split("-")
+    for i in range(int(x), int(y) + 1):
+        s = str(i)
+        if s[0:len(s)//2] == s[len(s)//2:]:
+            res += i
+print(res)
