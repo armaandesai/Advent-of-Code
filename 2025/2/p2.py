@@ -14,7 +14,7 @@ for id in ids:
         s = str(i)
         checked = False
         for j in range(1, len(s) // 2 + 1):
-            if len(s) % j != 0:
+            if len(s) % j != 0 or checked:
                 continue
             pattern = s[0:j]
             if pattern * (len(s) // j) == s:
